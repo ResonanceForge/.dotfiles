@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+[user]
+	name = ResonanceForge
+	email = 135431383+ResonanceForge@users.noreply.github.com
+[pull]
+	rebase = false
+[merge]
+	tool = nvimdiff
