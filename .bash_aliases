@@ -15,3 +15,6 @@ alias tts='opencc -c /usr/share/opencc/t2s.json'
 # countdown
 alias long='/home/friz/Documents/cpp/timer/long &'
 alias short='/home/friz/Documents/cpp/timer/short &'
+
+# dotfiles
+alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/github/.dotfiles" --work-tree="$HOME"'
