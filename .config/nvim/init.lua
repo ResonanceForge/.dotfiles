@@ -32,7 +32,6 @@ vim.o.list = true
 -- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
 vim.o.confirm = true
 
--- nowrap
 vim.o.wrap=false
 
 -- formatoptions so that `gq` works for chinese
@@ -98,4 +97,18 @@ vim.cmd('filetype plugin on')
 
 vim.cmd('syntax on')
 
+require("config.lazy")
 
+
+vim.keymap.set({"i"}, "<C-K>", function() require("luasnip").expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-L>", function() require("luasnip").jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-J>", function() require("luasnip").jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function()
+    if require("luasnip").choice_active() then
+        require("luasnip").change_choice(1)
+    end
+end, {silent = true})
+
+
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/config/LuaSnip/"})
