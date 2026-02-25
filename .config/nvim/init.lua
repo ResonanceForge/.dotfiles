@@ -104,7 +104,7 @@ vim.keymap.set({"i"}, "<C-K>", function() require("luasnip").expand() end, {sile
 vim.keymap.set({"i", "s"}, "<C-L>", function() require("luasnip").jump( 1) end, {silent = true})
 vim.keymap.set({"i", "s"}, "<C-J>", function() require("luasnip").jump(-1) end, {silent = true})
 
-vim.keymap.set({"i", "s"}, "<C-E>", function()
+vim.keymap.set({"i", "s"}, "<C-R>", function()
     if require("luasnip").choice_active() then
         require("luasnip").change_choice(1)
     end
