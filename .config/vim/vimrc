@@ -7,3 +7,4 @@ set expandtab
 set softtabstop=4
 colorscheme murphy
 set laststatus=2
+set hlsearch
