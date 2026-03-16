@@ -7,7 +7,7 @@ alias tree='tree -C'
 # convenience aliases
 alias nv='nvim'
 alias py='python'
-alias wetter='curl https://wttr.in/xuzhou+xinyi?m'
+alias wetter='curl https://wttr.in/xuzhou+xinyi\?m'
 
 # opencc
 alias tts='opencc -c /usr/share/opencc/t2s.json'
