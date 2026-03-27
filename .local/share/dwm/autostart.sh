@@ -4,7 +4,7 @@ ibus-daemon -drx &
 feh --bg-fill Pictures/starfield.png
 ~/.local/share/dwm/sysstatus.sh &
 xautolock -time 15 -locker "slock" -detectsleep &
-redshift -l 34.36046329567342:118.33996667935915 &
+redshift -l 39.99949502430241:116.32646283594929 &
 picom &
 # dunst &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
