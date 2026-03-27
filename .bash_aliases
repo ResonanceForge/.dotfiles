@@ -17,4 +17,4 @@ alias long='/home/friz/Documents/cpp/timer/long &'
 alias short='/home/friz/Documents/cpp/timer/short &'
 
 # dotfiles
-alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/github/.dotfiles" --work-tree="$HOME"'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/projects/github/.dotfiles" --work-tree="$HOME"'
