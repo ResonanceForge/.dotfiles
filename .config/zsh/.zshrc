@@ -30,3 +30,8 @@ zstyle ':completion:*' cache-path $HOME/.cache/zsh/zcompcache
 compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+# edit-command-line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
