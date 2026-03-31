@@ -13,8 +13,8 @@ alias wetter='curl https://wttr.in/xuzhou+xinyi\?m'
 alias tts='opencc -c /usr/share/opencc/t2s.json'
 
 # countdown
-alias long='/home/friz/Documents/cpp/timer/long &'
-alias short='/home/friz/Documents/cpp/timer/short &'
+alias long='/home/friz/.local/share//timer/long &'
+alias short='/home/friz/.local/share//timer/short &'
 
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/projects/github/.dotfiles" --work-tree="$HOME"'
