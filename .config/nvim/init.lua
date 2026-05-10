@@ -90,7 +90,7 @@ end, { range = true})
 
 -- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
 -- 'updatetime' and when going to insert mode
-vim.cmd('packadd! nohlsearch')
+vim.cmd('packadd nohlsearch')
 
 
 vim.cmd('filetype plugin on')
