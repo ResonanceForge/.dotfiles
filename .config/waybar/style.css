@@ -1,0 +1,33 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #222222;
+    color: #bbbbbb;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: #bbbbbb;
+    background-color: #222222;
+    border-radius: 0;
+}
+
+#workspaces button.active {
+    background-color: #33a151;
+    color: #eeeeee;
+}
+
+##workspaces button.urgent {
+  background-color: #ef5e5e;
+  color: #282828;
+
+}layout, #window, #clock, #tray {
+    padding: 0 8px;
+    color: #eeeeee;
+}
