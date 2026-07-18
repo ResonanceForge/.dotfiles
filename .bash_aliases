@@ -17,4 +17,4 @@ alias long='/home/friz/.local/share/timer/long &'
 alias short='/home/friz/.local/share/timer/short &'
 
 # dotfiles
-alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/projects/github/.dotfiles" --work-tree="$HOME"'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/Documents/projects/git-remoted/.dotfiles" --work-tree="$HOME"'
