@@ -112,3 +112,35 @@ end, {silent = true})
 
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/config/LuaSnip/"})
+
+vim.opt.termguicolors = true
+
+require("colorizer").setup({
+    options = {
+        parsers = {
+            names = { enable = false },
+            hex = {
+                default = true,
+                aarrggbb = false,
+                rrggbbaa = true,
+                hash_aarrggbb = true,
+            },
+            custom = {
+        {
+          name = "0xrrggbbaa",
+          prefixes = { "0x" },
+          parse = function(ctx)
+            local m = ctx.line:match("0x(%x%x%x%x%x%x%x%x)", ctx.col)
+            if m then
+              local rgb = m:sub(1, 6)
+              return #("0x" .. m), rgb:lower()
+            end
+          end,
+        },
+            }
+        },
+        display = {
+            mode = "background",
+        }
+    }
+})
