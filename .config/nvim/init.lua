@@ -84,6 +84,48 @@ vim.api.nvim_create_user_command('Tts', function(opts)
     vim.cmd(opts.line1 .. "," .. opts.line2 .. '!opencc -c /usr/share/opencc/t2s.json')
 end, { range = true})
 
+vim.api.nvim_create_user_command('EditHistory', function()
+  -- 1. Get all current history
+  local history = {}
+  for i = 1, vim.fn.histnr('cmd') do
+    local item = vim.fn.histget('cmd', i)
+    if item ~= '' then
+      table.insert(history, item)
+    end
+  end
+
+  -- 2. Open a new empty buffer
+  vim.cmd('enew')
+  local buf = vim.api.nvim_get_current_buf()
+
+  -- Name the buffer to prevent the "E32: No file name" error
+  local buf_name = 'edit-history://' .. buf
+  vim.api.nvim_buf_set_name(buf, buf_name)
+
+  -- Put history into the named buffer
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, history)
+
+  -- Set buffer properties to make it custom-writable
+  vim.bo[buf].buftype = 'acwrite'
+  vim.bo[buf].bufhidden = 'wipe'
+
+  -- 3. Intercept saving to update history
+  vim.api.nvim_create_autocmd('BufWriteCmd', {
+    buffer = buf,
+    callback = function()
+      local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+      vim.fn.histdel('cmd') -- Clear old history in memory
+      for _, line in ipairs(lines) do
+        if line ~= '' then vim.fn.histadd('cmd', line) end
+      end
+      vim.cmd('wshada!') -- Force save to disk
+      vim.bo[buf].modified = false
+      print("Command history permanently updated!")
+    end
+  })
+  print("Delete the lines you don't want, then type :w to save your history.")
+end, {})
+
 -- [[ Add optional packages ]]
 -- Nvim comes bundled with a set of packages that are not enabled by
 -- default. You can enable any of them by using the `:packadd` command.
