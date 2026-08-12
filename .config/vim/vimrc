@@ -1,4 +1,5 @@
 set number
+set rnu
 syntax on
 set smartindent
 set tabstop=4
@@ -8,4 +9,11 @@ set softtabstop=4
 colorscheme murphy
 set laststatus=2
 set hlsearch
+set list listchars=trail:-
+set ttimeout
+set ttm=50
+se cul
 packadd! nohlsearch
+" in contontest, use this one-liner:
+" syn on | se nu rnu si ts=4 sw=4 et sts ls hls list lcs=trail:- ttimeout ttm=50 cul | pa! nohlsearch
+" colo murphy
