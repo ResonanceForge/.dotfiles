@@ -1,5 +1,5 @@
 set number
-set rnu
+set relativenumber
 syntax on
 set smartindent
 set tabstop=4
@@ -11,9 +11,10 @@ set laststatus=2
 set hlsearch
 set list listchars=trail:-
 set ttimeout
-set ttm=50
-se cul
+set ttimeoutlen=50
+set cursorline
 packadd! nohlsearch
+set nowrap
 " in contontest, use this one-liner:
 " syn on | se nu rnu si ts=4 sw=4 et sts ls hls list lcs=trail:- ttimeout ttm=50 cul | pa! nohlsearch
 " colo murphy
