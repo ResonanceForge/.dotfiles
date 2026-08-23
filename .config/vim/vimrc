@@ -14,7 +14,9 @@ set ttimeout
 set ttimeoutlen=50
 set cursorline
 packadd! nohlsearch
-set nowrap
 " in contontest, use this one-liner:
 " syn on | se nu rnu si ts=4 sw=4 et sts ls hls list lcs=trail:- ttimeout ttm=50 cul | pa! nohlsearch
 " colo murphy
+set nowrap
+map <Leader>y "+y
+map <Leader>p "+p
