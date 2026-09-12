@@ -155,6 +155,7 @@ end, {silent = true})
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/config/LuaSnip/"})
 
+vim.o.termguicolors = true
 -- require("colorizer").setup({
 --     options = {
 --         parsers = {

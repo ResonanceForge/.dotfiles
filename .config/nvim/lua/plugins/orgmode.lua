@@ -12,4 +12,5 @@ return {
     -- Experimental LSP support
     -- vim.lsp.enable('org')
   end,
+  -- 'jceb/vim-orgmode',
 }
